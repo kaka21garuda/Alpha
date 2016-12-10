@@ -11,6 +11,7 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
+    
     var category: ShowingCategory! {
         didSet {
             updateUI()

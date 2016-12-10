@@ -11,6 +11,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var indexPathRow: Int!
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -25,9 +27,21 @@ class ViewController: UIViewController {
         static let cellIdentifier = "cell"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToSources" {
+            //let showSources: SourceViewController = segue.destination as! SourceViewController
+            //showSources.instanceOfCategoryViewController = self
+            
+            let nav  = segue.destination as! UINavigationController
+            let showSources = nav.topViewController as! SourceViewController
+            showSources.instanceOfCategoryViewController = self
+            
+        }
+    }
+    
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -37,6 +51,7 @@ extension ViewController: UICollectionViewDataSource {
         return categories.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.cellIdentifier, for: indexPath) as! CategoryCollectionViewCell
@@ -44,6 +59,10 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)! as! CategoryCollectionViewCell
+        indexPathRow = indexPath.item
+    }
     
 }
 

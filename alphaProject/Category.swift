@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+
 enum Category: String {
     
     case general = "general"
@@ -20,6 +22,8 @@ enum Category: String {
     case sport = "sport"
     case gaming = "gaming"
 }
+
+let categoryArray: [Category] = [.general, .business, .tech, .science, .entertainment, .music, .sport, .gaming]
 
 class ShowingCategory {
     
