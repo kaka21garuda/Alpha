@@ -7,6 +7,6 @@ target 'alphaProject' do
 
   # Pods for alphaProject
   pod 'Alamofire'
-  
+  pod 'Koloda'
   
 end
