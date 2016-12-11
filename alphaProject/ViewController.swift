@@ -29,11 +29,11 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToSources" {
-            //let showSources: SourceViewController = segue.destination as! SourceViewController
-            //showSources.instanceOfCategoryViewController = self
+            let showSources: SourceViewController = segue.destination as! SourceViewController
+            showSources.instanceOfCategoryViewController = self
             
-            let nav  = segue.destination as! UINavigationController
-            let showSources = nav.topViewController as! SourceViewController
+//            let nav  = segue.destination as! UINavigationController
+//            let showSources = nav.topViewController as! SourceViewController
             showSources.instanceOfCategoryViewController = self
             
         }
