@@ -6,12 +6,14 @@
 //  Copyright © 2016 Buka Cakrawala. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 
 import Alamofire
 
 class SourceViewController: UIViewController {
+    
+    var sourceIdIndex: Int!
     
     var sourceNameArray = [String]()
     var sourceIDArray = [String]()
@@ -65,15 +67,16 @@ class SourceViewController: UIViewController {
                     sourceIDArray.append(id!)
                     sourceURLLogoArray.append(url!)
                 }
-                print(sourceNameArray)
                 collectionView.reloadData()
             }
             
         } catch {
-            print(error.localizedDescription)
+            //print(error.localizedDescription)
         }
     }
     
+    
+    //MARK: - imageFromURL
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
@@ -82,11 +85,9 @@ class SourceViewController: UIViewController {
     }
     
     func downloadImage(url: URL, imageView: UIImageView) {
-        print("Download Started")
         getDataFromUrl(url: url) { (data, response, error)  in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
+            //print(response?.suggestedFilename ?? url.lastPathComponent)
             DispatchQueue.main.async() { () -> Void in
                 imageView.image = UIImage(data: data)
             }
@@ -117,8 +118,10 @@ extension SourceViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        sourceIdIndex = indexPath.item
+        print(sourceIDArray[sourceIdIndex])
     }
+    
 }
 
 

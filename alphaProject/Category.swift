@@ -6,10 +6,7 @@
 //  Copyright © 2016 Buka Cakrawala. All rights reserved.
 //
 
-import Foundation
 import UIKit
-
-
 
 enum Category: String {
     
