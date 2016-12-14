@@ -25,4 +25,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         featuredImageView?.image! = category.featuredImage
     }
     
+    
+    
 }

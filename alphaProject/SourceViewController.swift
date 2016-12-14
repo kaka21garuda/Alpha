@@ -40,6 +40,7 @@ class SourceViewController: UIViewController {
         
         alamofire(sourceURL: searchSourceURL)
         collectionView.reloadData()
+        
     }
     
     func alamofire(sourceURL: String) {
@@ -66,12 +67,14 @@ class SourceViewController: UIViewController {
                     sourceNameArray.append(name!)
                     sourceIDArray.append(id!)
                     sourceURLLogoArray.append(url!)
+                    
+                    //print(sourceURLLogoArray)
                 }
                 collectionView.reloadData()
             }
             
         } catch {
-            //print(error.localizedDescription)
+            print(error.localizedDescription)
         }
     }
     
@@ -87,10 +90,16 @@ class SourceViewController: UIViewController {
     func downloadImage(url: URL, imageView: UIImageView) {
         getDataFromUrl(url: url) { (data, response, error)  in
             guard let data = data, error == nil else { return }
-            //print(response?.suggestedFilename ?? url.lastPathComponent)
             DispatchQueue.main.async() { () -> Void in
                 imageView.image = UIImage(data: data)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToArticle" {
+            let articleView: ArticlesViewController = segue.destination as! ArticlesViewController
+            articleView.instanceOfSource = self
         }
     }
     
@@ -123,6 +132,3 @@ extension SourceViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
 }
-
-
-

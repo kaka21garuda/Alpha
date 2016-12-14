@@ -33,10 +33,12 @@ class ViewController: UIViewController {
             
 //            let nav  = segue.destination as! UINavigationController
 //            let showSources = nav.topViewController as! SourceViewController
-            showSources.instanceOfCategoryViewController = self
+            //showSources.instanceOfCategoryViewController = self
             
         }
     }
+    
+    
     
 }
 
@@ -61,6 +63,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)! as! CategoryCollectionViewCell
         indexPathRow = indexPath.item
+    }
+    
+    
+    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: view.frame.width / 4, height: view.frame.height / 4);
     }
     
 }
