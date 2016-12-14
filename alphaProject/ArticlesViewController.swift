@@ -33,7 +33,7 @@ class ArticlesViewController: UIViewController {
     }
     
     func alamofire(url: String) {
-        let parameters: Parameters = ["apiKey":"5ae7ebd3853141dab692e3675be9e834", "source":instanceOfSource.sourceIDArray[instanceOfSource.sourceIdIndex]]
+        let parameters: Parameters = ["apiKey":"5ae7ebd3853141dab692e3675be9e834", "source":instanceOfSource.sourceArray[instanceOfSource.sourceIdIndex].sourceId]
         
         Alamofire.request(url, parameters: parameters).responseJSON { (response) in
             self.parseData(JSONData: response.data!)

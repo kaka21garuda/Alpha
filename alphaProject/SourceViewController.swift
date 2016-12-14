@@ -13,20 +13,14 @@ import Alamofire
 
 class SourceViewController: UIViewController {
     
-    var sourceIdIndex: Int!
+    var sourceArray = [Source]()
     
-    var sourceNameArray = [String]()
-    var sourceIDArray = [String]()
-    var sourceURLLogoArray = [String]()
+    var sourceIdIndex: Int!
     
     var instanceOfCategoryViewController: ViewController!
     
     var searchSourceURL = "https://newsapi.org/v1/sources"
     typealias standardJSON = [String : AnyObject]
-    
-    var name: String?
-    var id: String?
-    var url: String?
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -60,15 +54,11 @@ class SourceViewController: UIViewController {
             if let sources = readableJSON["sources"] as? [standardJSON] {
                 for i in 0..<sources.count {
                     let source = sources[i]
-                    name = source["name"] as? String
-                    id = source["id"] as? String
-                    url = source["urlsToLogos"]?["small"] as? String
                     
-                    sourceNameArray.append(name!)
-                    sourceIDArray.append(id!)
-                    sourceURLLogoArray.append(url!)
+                    let sourceObject = Source(sourceName: (source["name"] as? String)!, sourceId: (source["id"] as? String)!, sourceLogo: (source["urlsToLogos"]?["small"] as? String)!)
                     
-                    //print(sourceURLLogoArray)
+                    sourceArray.append(sourceObject)
+                    
                 }
                 collectionView.reloadData()
             }
@@ -107,19 +97,19 @@ class SourceViewController: UIViewController {
 
 // MARK: - extension
 
-extension SourceViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension SourceViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sourceNameArray.count
+        return sourceArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.cellIdentifier, for: indexPath) as! SourceViewCell
-        cell.sourceNameLabel.text = sourceNameArray[indexPath.item]
-        if let sourceLogo = URL(string: sourceURLLogoArray[indexPath.item]) {
+        cell.sourceNameLabel.text = sourceArray[indexPath.item].sourceName
+        if let sourceLogo = URL(string: sourceArray[indexPath.item].sourceLogo) {
             cell.sourceImage.contentMode = .scaleAspectFit
             downloadImage(url: sourceLogo, imageView: cell.sourceImage)
         }
@@ -128,7 +118,15 @@ extension SourceViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         sourceIdIndex = indexPath.item
-        print(sourceIDArray[sourceIdIndex])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let side = (view.frame.width - 60) / 2
+        let height = (view.frame.height) / 3
+        
+        let size = CGSize(width: side, height: height)
+        return size
     }
     
 }

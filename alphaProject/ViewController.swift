@@ -42,7 +42,10 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+
+// Collection View Code !!!!
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -57,6 +60,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.cellIdentifier, for: indexPath) as! CategoryCollectionViewCell
         cell.category = self.categories[indexPath.item]
+        
         return cell
     }
     
@@ -66,8 +70,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     
-    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: view.frame.width / 4, height: view.frame.height / 4);
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        // calculate width based on size view frame...
+        let width = (view.frame.width - 60) / 2
+        
+        let size = CGSize(width: width, height: width)
+        
+        return size
+        
     }
     
 }

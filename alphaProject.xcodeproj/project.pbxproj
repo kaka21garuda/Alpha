@@ -22,6 +22,7 @@
 		C6A956421DF7BF5E00E00F85 /* alphaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A956411DF7BF5E00E00F85 /* alphaProjectTests.swift */; };
 		C6A9564D1DF7BF5E00E00F85 /* alphaProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9564C1DF7BF5E00E00F85 /* alphaProjectUITests.swift */; };
 		C6C777571DFDC5E6003019C2 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C777561DFDC5E6003019C2 /* ArticlesViewController.swift */; };
+		C6E469611E01C60D0026A008 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E469601E01C60D0026A008 /* Source.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		C6A9564C1DF7BF5E00E00F85 /* alphaProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alphaProjectUITests.swift; sourceTree = "<group>"; };
 		C6A9564E1DF7BF5E00E00F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C777561DFDC5E6003019C2 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		C6E469601E01C60D0026A008 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				C65B95331DFC733D00C6B5CB /* SourceViewController.swift */,
 				C6070B941DFC9A850068D3C1 /* SourceViewCell.swift */,
+				C6E469601E01C60D0026A008 /* Source.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				C6C777571DFDC5E6003019C2 /* ArticlesViewController.swift in Sources */,
 				C6A9562D1DF7BF5E00E00F85 /* AppDelegate.swift in Sources */,
 				C670BCAF1DFB7612004D0C14 /* Category.swift in Sources */,
+				C6E469611E01C60D0026A008 /* Source.swift in Sources */,
 				C6070B951DFC9A850068D3C1 /* SourceViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
