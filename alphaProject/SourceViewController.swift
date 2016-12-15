@@ -6,7 +6,6 @@
 //  Copyright © 2016 Buka Cakrawala. All rights reserved.
 //
 
-
 import UIKit
 
 import Alamofire

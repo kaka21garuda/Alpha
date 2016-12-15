@@ -22,6 +22,7 @@
 		C6A956421DF7BF5E00E00F85 /* alphaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A956411DF7BF5E00E00F85 /* alphaProjectTests.swift */; };
 		C6A9564D1DF7BF5E00E00F85 /* alphaProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9564C1DF7BF5E00E00F85 /* alphaProjectUITests.swift */; };
 		C6C777571DFDC5E6003019C2 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C777561DFDC5E6003019C2 /* ArticlesViewController.swift */; };
+		C6DF36DB1E020391008DD757 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF36DA1E020391008DD757 /* DisplayViewController.swift */; };
 		C6E469611E01C60D0026A008 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E469601E01C60D0026A008 /* Source.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		C6A9564C1DF7BF5E00E00F85 /* alphaProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alphaProjectUITests.swift; sourceTree = "<group>"; };
 		C6A9564E1DF7BF5E00E00F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C777561DFDC5E6003019C2 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		C6DF36DA1E020391008DD757 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		C6E469601E01C60D0026A008 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 		C6A9562B1DF7BF5E00E00F85 /* alphaProject */ = {
 			isa = PBXGroup;
 			children = (
+				C6DF36D91E02027E008DD757 /* DisplayArticle */,
 				C6C777551DFDC5A1003019C2 /* Articles */,
 				C65B95321DFC730900C6B5CB /* Sources */,
 				C65B95311DFC72EE00C6B5CB /* Category */,
@@ -190,6 +193,14 @@
 				C63E57891E010260001FC66B /* Articles.swift */,
 			);
 			name = Articles;
+			sourceTree = "<group>";
+		};
+		C6DF36D91E02027E008DD757 /* DisplayArticle */ = {
+			isa = PBXGroup;
+			children = (
+				C6DF36DA1E020391008DD757 /* DisplayViewController.swift */,
+			);
+			name = DisplayArticle;
 			sourceTree = "<group>";
 		};
 		F814198A1E90889BE87F7292 /* Pods */ = {
@@ -392,6 +403,7 @@
 				C65B95341DFC733D00C6B5CB /* SourceViewController.swift in Sources */,
 				C670BCB11DFBC72B004D0C14 /* CategoryCollectionViewCell.swift in Sources */,
 				C6A9562F1DF7BF5E00E00F85 /* ViewController.swift in Sources */,
+				C6DF36DB1E020391008DD757 /* DisplayViewController.swift in Sources */,
 				C674BDCC1DFF57EB007DB551 /* ArticlesViewCell.swift in Sources */,
 				C63E578A1E010260001FC66B /* Articles.swift in Sources */,
 				C6C777571DFDC5E6003019C2 /* ArticlesViewController.swift in Sources */,

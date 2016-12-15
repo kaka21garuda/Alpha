@@ -10,11 +10,12 @@ import UIKit
 
 import Alamofire
 
+
 class ArticlesViewController: UIViewController {
-    
+
     var articleArray: [Article] = []
+    var index: Int!
     
-    @IBOutlet weak var segmentSorting: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var instanceOfSource: SourceViewController!
@@ -30,6 +31,13 @@ class ArticlesViewController: UIViewController {
         collectionView.reloadData()
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDisplay" {
+            let displayArticle = segue.destination as! DisplayViewController
+            displayArticle.instanceOfArticle = self
+        }
     }
     
     func alamofire(url: String) {
@@ -72,19 +80,6 @@ class ArticlesViewController: UIViewController {
         }
     }
     
-    
-    func indicator() -> String {
-        switch segmentSorting.selectedSegmentIndex {
-        case 0:
-            return "latest"
-        case 1:
-            return "top"
-        default:
-            return "latest"
-        }
-        //collectionView.reloadData()
-    }
-    
     //MARK: - imageFromURL
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
@@ -104,7 +99,7 @@ class ArticlesViewController: UIViewController {
 
 }
 
-extension ArticlesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ArticlesViewController: UICollectionViewDataSource, UICollectionViewDelegate , UICollectionViewDelegateFlowLayout{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -122,14 +117,12 @@ extension ArticlesViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         cell.articleTitleLabel.text = articleArray[indexPath.item].title
         cell.articleTitleLabel.textColor = UIColor.blue
-        cell.layer.borderWidth = 5.0
-        cell.layer.borderColor = UIColor.black.cgColor
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        index = indexPath.item
     }
     
 }

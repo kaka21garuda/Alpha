@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     var indexPathRow: Int!
     
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var categories = ShowingCategory.createCategory()
@@ -20,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let navigation = UINavigationController()
+        navigation.navigationBar.barTintColor = UIColor.green
     }
     
     struct Storyboard {
@@ -30,11 +31,6 @@ class ViewController: UIViewController {
         if segue.identifier == "segueToSources" {
             let showSources: SourceViewController = segue.destination as! SourceViewController
             showSources.instanceOfCategoryViewController = self
-            
-//            let nav  = segue.destination as! UINavigationController
-//            let showSources = nav.topViewController as! SourceViewController
-            //showSources.instanceOfCategoryViewController = self
-            
         }
     }
     
@@ -59,8 +55,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.cellIdentifier, for: indexPath) as! CategoryCollectionViewCell
-        cell.category = self.categories[indexPath.item]
-        
+        //cell.category = self.categories[indexPath.item]
+        cell.categoryTitleLabel.text = categories[indexPath.item].title
+        cell.featuredImageView.image = categories[indexPath.item].featuredImage
         return cell
     }
     
@@ -75,7 +72,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         // calculate width based on size view frame...
         let width = (view.frame.width - 60) / 2
         
-        let size = CGSize(width: width, height: width)
+        let size = CGSize(width: width, height: width + 30)
         
         return size
         
