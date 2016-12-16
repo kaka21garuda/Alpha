@@ -85,6 +85,8 @@ class SourceViewController: UIViewController {
         }
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToArticle" {
             let articleView: ArticlesViewController = segue.destination as! ArticlesViewController
@@ -112,6 +114,7 @@ extension SourceViewController: UICollectionViewDataSource, UICollectionViewDele
             cell.sourceImage.contentMode = .scaleAspectFit
             downloadImage(url: sourceLogo, imageView: cell.sourceImage)
         }
+        
         return cell
     }
     

@@ -35,7 +35,7 @@ class ShowingCategory {
     }
     
     static func createCategory() -> [ShowingCategory] {
-        return [ ShowingCategory(title: "GENERAL", category: .general, featuredImage: UIImage(named: "generalRed")!),
+        return [ ShowingCategory(title: "GENERAL", category: .general, featuredImage: UIImage(named: "generalNews")!),
                  ShowingCategory(title: "BUSINESS", category: .business, featuredImage: UIImage(named: "businessCategory")!),
                  ShowingCategory(title: "TECH", category: .tech, featuredImage: UIImage(named: "technologyCategory")!),
                  ShowingCategory(title: "SCIENCE", category: .science, featuredImage: UIImage(named: "scienceCategory")!),

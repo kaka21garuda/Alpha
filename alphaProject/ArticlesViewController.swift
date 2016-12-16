@@ -112,11 +112,14 @@ extension ArticlesViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as! ArticlesViewCell
         if let articleLogo = URL(string: articleArray[indexPath.item].imageUrl!) {
-            cell.articlePicture.contentMode = .scaleAspectFit
+            cell.articlePicture.contentMode = .scaleAspectFill
             downloadImage(url: articleLogo, imageView: cell.articlePicture)
         }
         cell.articleTitleLabel.text = articleArray[indexPath.item].title
-        cell.articleTitleLabel.textColor = UIColor.blue
+        cell.articleTitleLabel.textColor = UIColor.white
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 2.0
+        cell.layer.cornerRadius = 10.0
         
         return cell
     }

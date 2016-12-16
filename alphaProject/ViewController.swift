@@ -72,7 +72,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         // calculate width based on size view frame...
         let width = (view.frame.width - 60) / 2
         
-        let size = CGSize(width: width, height: width + 30)
+        let size = CGSize(width: width, height: width )
         
         return size
         
