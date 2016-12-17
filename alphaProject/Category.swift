@@ -39,7 +39,7 @@ class ShowingCategory {
                  ShowingCategory(title: "BUSINESS", category: .business, featuredImage: UIImage(named: "businessCategory")!),
                  ShowingCategory(title: "TECH", category: .tech, featuredImage: UIImage(named: "technologyCategory")!),
                  ShowingCategory(title: "SCIENCE", category: .science, featuredImage: UIImage(named: "scienceCategory")!),
-                 ShowingCategory(title: "ENTERTAINMENT", category: .entertainment, featuredImage: UIImage(named: "entertainmentCategory")!),
+                 ShowingCategory(title: "Enews!", category: .entertainment, featuredImage: UIImage(named: "entertainmentCategory")!),
                  ShowingCategory(title: "MUSIC", category: .music, featuredImage: UIImage(named: "musicCategory")!),
                  ShowingCategory(title: "SPORT", category: .sport, featuredImage: UIImage(named: "sportCategory")!),
                  ShowingCategory(title: "GAMING", category: .gaming, featuredImage: UIImage(named: "gamingCategory")!),

@@ -14,6 +14,7 @@
 		C670BCAF1DFB7612004D0C14 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670BCAE1DFB7612004D0C14 /* Category.swift */; };
 		C670BCB11DFBC72B004D0C14 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670BCB01DFBC72B004D0C14 /* CategoryCollectionViewCell.swift */; };
 		C674BDCC1DFF57EB007DB551 /* ArticlesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C674BDCB1DFF57EB007DB551 /* ArticlesViewCell.swift */; };
+		C6832E0D1E05F05F00516880 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6832E0C1E05F05F00516880 /* Alamofire.framework */; };
 		C6A9562D1DF7BF5E00E00F85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9562C1DF7BF5E00E00F85 /* AppDelegate.swift */; };
 		C6A9562F1DF7BF5E00E00F85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9562E1DF7BF5E00E00F85 /* ViewController.swift */; };
 		C6A956321DF7BF5E00E00F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A956301DF7BF5E00E00F85 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		C670BCAE1DFB7612004D0C14 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C670BCB01DFBC72B004D0C14 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C674BDCB1DFF57EB007DB551 /* ArticlesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewCell.swift; sourceTree = "<group>"; };
+		C6832E0C1E05F05F00516880 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/alphaProject-cuyrrcganfmugebbuonvuroaakxo/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		C6A956291DF7BF5E00E00F85 /* alphaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alphaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A9562C1DF7BF5E00E00F85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6A9562E1DF7BF5E00E00F85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6832E0D1E05F05F00516880 /* Alamofire.framework in Frameworks */,
 				C262E92763FAFF7DA1C10818 /* Pods_alphaProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +105,7 @@
 		4A6F14F8CD3B078EE3B07F4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6832E0C1E05F05F00516880 /* Alamofire.framework */,
 				5CBF1300D96FC372AA162C01 /* Pods_alphaProject.framework */,
 				4C514B1ED585A5CFA54C0613 /* Pods_alphaProjectTests.framework */,
 				5D1664F51F583CE8C4E7712C /* Pods_alphaProjectUITests.framework */,
@@ -283,7 +287,7 @@
 				TargetAttributes = {
 					C6A956281DF7BF5E00E00F85 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = TRR5Q7F2CV;
+						DevelopmentTeam = T9R33YRSR8;
 						ProvisioningStyle = Automatic;
 					};
 					C6A9563C1DF7BF5E00E00F85 = {
@@ -563,12 +567,13 @@
 			baseConfigurationReference = 5AF28432CBDAB96A2BC8D53F /* Pods-alphaProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TRR5Q7F2CV;
+				DEVELOPMENT_TEAM = T9R33YRSR8;
 				INFOPLIST_FILE = alphaProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaka.alphaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -577,12 +582,13 @@
 			baseConfigurationReference = 526D9579A18DA50FF9B73DBF /* Pods-alphaProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TRR5Q7F2CV;
+				DEVELOPMENT_TEAM = T9R33YRSR8;
 				INFOPLIST_FILE = alphaProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaka.alphaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
