@@ -3,7 +3,9 @@ Welcome to Alfa News!
 
 Alfa News provide a simplified experience for news reader with its beautiful and user friendly UI. You select which category of news you interested in, and Alfa News will show you the most reliable sources according to the category. If you find a source you like, you will get directed to top articles and read the article.
 
-iOS App Store: https://itunes.apple.com/us/app/alfa-news/id1187632337?ls=1&mt=8
+* iOS App Store: https://itunes.apple.com/us/app/alfa-news/id1187632337?ls=1&mt=8
+
+* Devpost: https://devpost.com/software/alfa-news
 
 ----------
 
